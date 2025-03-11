@@ -1,38 +1,119 @@
-.App {
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 450px;
+  margin: 50px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: background 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.container.dark {
+  background: #333;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Input and Buttons */
+.input, .filter-select, .edit-input {
+  width: calc(100% - 24px);
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-btn, .toggle-btn {
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.add-btn {
+  background: #007bff;
+  color: white;
+}
+
+.toggle-btn {
+  background: #28a745;
+  color: white;
+}
+
+/* Task List */
+.task-list {
+  margin-top: 20px;
+}
+
+/* Task Item */
+.task-item {
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #f1f3f5;
+}
+
+/* Task Actions */
+.task-item div {
+  display: flex;
+  gap: 8px;
+}
+
+.delete-btn, .edit-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.edit-btn {
+  background: #ffc107;
+  color: white;
+}
+
+/* Completed Task */
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  cursor: pointer;
+}
+
+/* Notification */
+.notification {
+  background: #ffc107;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  color: black;
+  font-size: 14px;
 }
